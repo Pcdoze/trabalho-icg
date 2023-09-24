@@ -12,21 +12,23 @@ void MyGlDraw(void)
     // Chame aqui as funções do mygl.h
     //*************************************************************************
 
-    DrawTriangle(
-        0, 0, 
-        100, 50, 
-        0, 100);
+    DrawLine(0, 0, 
+             IMAGE_WIDTH, IMAGE_HEIGHT);
+    DrawLine(0.25*IMAGE_WIDTH, 0, 
+             0.75*IMAGE_WIDTH, IMAGE_HEIGHT);
+    DrawLine(0.5*IMAGE_WIDTH, 0, 
+             0.5*IMAGE_WIDTH, IMAGE_HEIGHT);
+    DrawLine(0.75*IMAGE_WIDTH, 0, 
+             0.25*IMAGE_WIDTH, IMAGE_HEIGHT);
 
-    DrawTriangle(
-        200, 200, 
-        400, 400, 
-        200, 400);
-
-    DrawTriangle(
-        200, 50, 
-        200, 100, 
-        100, 100);
-
+    DrawLine(IMAGE_WIDTH, 0, 
+             0, IMAGE_HEIGHT);
+    DrawLine(IMAGE_WIDTH, 0.25*IMAGE_HEIGHT, 
+             0, 0.75*IMAGE_HEIGHT);
+    DrawLine(IMAGE_WIDTH, 0.5*IMAGE_HEIGHT, 
+             0, 0.5*IMAGE_HEIGHT);         
+    DrawLine(IMAGE_WIDTH, 0.75*IMAGE_HEIGHT, 
+             0, 0.25*IMAGE_HEIGHT);
 }
 
 void PutPixel(int x, int y) {
@@ -43,21 +45,6 @@ void DrawLine(int x1, int y1, int x2, int y2)
 
     double ix = 0.0;
     double iy = 0.0;
-
-    int temp = 0;
-
-    // if(x1 > x2){
-    //     temp = x1;
-    //     x1 = x2;
-    //     x2 = temp;
-    // }
-    // if(y1 > y2){
-    //     temp = y1;
-    //     y1 = y2;
-    //     y2 = temp;
-    // }
-
-    //printf("\n%d %d %d %d", x1, y1, x2, y2);
 
     int diff_x = x2-x1;
     int diff_y = y2-y1;
@@ -92,8 +79,6 @@ void DrawLine(int x1, int y1, int x2, int y2)
         cf = abs(diff_y);
     }
 
-
-    
     double cx = x1;
     double cy = y1;
 
